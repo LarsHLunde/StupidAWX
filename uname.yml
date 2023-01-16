@@ -1,0 +1,9 @@
+- name: Check the remote host Hostname, Version, Distribution with uname
+  hosts: all
+  tasks:
+    - name: Uname Printout
+      register: unameout
+      command: "uname -a"
+
+    - debug:
+        var: unameout.stdout_lines
